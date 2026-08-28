@@ -1,0 +1,20 @@
+{
+  "title": "EcoWorthy BMS Gateway",
+  "config": {
+    "step": {
+      "user": {"title": "Connect to gateway", "description": "Connect Home Assistant to the LAN API. No Bluetooth access is needed.", "data": {"host": "Host or IP address", "port": "Port", "use_ssl": "Use HTTPS", "token": "Bearer token (optional)", "scan_interval": "Update interval (seconds)"}},
+      "reconfigure": {"title": "Reconfigure gateway", "data": {"host": "Host or IP address", "port": "Port", "use_ssl": "Use HTTPS", "token": "Bearer token (optional)", "scan_interval": "Update interval (seconds)"}},
+      "reauth_confirm": {"title": "Update authentication", "description": "Enter the bearer token configured on the gateway.", "data": {"token": "Bearer token"}}
+    },
+    "error": {"cannot_connect": "Failed to connect to the gateway", "invalid_auth": "Invalid bearer token", "wrong_gateway": "This address belongs to a different gateway", "unknown": "Unexpected error"},
+    "abort": {"already_configured": "This gateway is already configured", "reauth_successful": "Authentication updated", "reconfigure_successful": "Gateway configuration updated"}
+  },
+  "entity": {
+    "sensor": {
+      "state_of_charge": {"name": "State of charge"}, "pack_voltage": {"name": "Pack voltage"}, "pack_current": {"name": "Pack current"}, "pack_power": {"name": "Pack power"}, "temperature": {"name": "Temperature"}, "remaining_capacity": {"name": "Remaining capacity"}, "design_capacity": {"name": "Design capacity"}, "state_of_health": {"name": "State of health"}, "direction": {"name": "Direction", "state": {"charging": "Charging", "discharging": "Discharging", "idle": "Idle"}}, "eta_to_empty": {"name": "Time to empty"}, "eta_to_full": {"name": "Time to full"}, "cycles": {"name": "Cycles"}, "cell_min_voltage": {"name": "Minimum cell voltage"}, "cell_max_voltage": {"name": "Maximum cell voltage"}, "cell_delta_voltage": {"name": "Cell voltage delta"}, "signal_strength": {"name": "Signal strength"}, "sample_age": {"name": "Sample age"}, "consecutive_failures": {"name": "Consecutive failures"}, "cell_voltage": {"name": "Cell {number} voltage"}, "temperature_probe": {"name": "Temperature probe {number}"}
+    },
+    "binary_sensor": {
+      "problem": {"name": "Problem"}, "charging": {"name": "Charging"}, "charge_mosfet": {"name": "Charge MOSFET"}, "discharge_mosfet": {"name": "Discharge MOSFET"}, "connectivity": {"name": "Connectivity"}
+    }
+  }
+}
